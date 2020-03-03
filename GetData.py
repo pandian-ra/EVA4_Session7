@@ -7,7 +7,7 @@ import numpy as np
 
 
 
-class GetData():
+def getData():
     SEED = 1
     # CUDA?
     cuda = torch.cuda.is_available()
@@ -32,7 +32,7 @@ class GetData():
                                          shuffle=False, num_workers=2)
     classes = ('plane', 'car', 'bird', 'cat',
            'deer', 'dog', 'frog', 'horse', 'ship', 'truck')
-    return trainloader, testloader, classes
+    return (trainloader, testloader, classes)
 #
 #
 #def imshow(img):
