@@ -8,7 +8,7 @@ import numpy as np
 
 
 class GetData():
-    def importDataset();
+    def importDataset():
         SEED = 1
         # CUDA?
         cuda = torch.cuda.is_available()
