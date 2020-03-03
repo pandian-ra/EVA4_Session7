@@ -11,7 +11,7 @@ class GetData():
         cuda = torch.cuda.is_available()
         print("CUDA Available?", cuda)
         # For reproducibility
-        device = torch.device("cuda" if use_cuda else "cpu")
+        device = torch.device("cuda" if cuda else "cpu")
         
         torch.manual_seed(SEED)
         
