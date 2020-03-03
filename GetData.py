@@ -11,6 +11,8 @@ class GetData():
         cuda = torch.cuda.is_available()
         print("CUDA Available?", cuda)
         # For reproducibility
+        device = torch.device("cuda" if use_cuda else "cpu")
+        
         torch.manual_seed(SEED)
         
         if cuda:
@@ -30,4 +32,4 @@ class GetData():
                                              shuffle=False, num_workers=2)
         classes = ('plane', 'car', 'bird', 'cat',
                'deer', 'dog', 'frog', 'horse', 'ship', 'truck')
-        return trainloader, testloader, classes
+        return trainloader, testloader, classes, device
