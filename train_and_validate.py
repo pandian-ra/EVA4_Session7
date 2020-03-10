@@ -46,7 +46,7 @@ class train_and_validate():
                 _, predicted = torch.max(outputs.data, 1)
                 total += labels.size(0)
                 correct += (predicted == labels).sum().item()
-        print('Accuracy of the network on the 10000 test images: %.4f %%' % (100 * correct / total))    
+        print('Accuracy of the network on the 10000 test images: %.4f %%' % ((100 * correct) / total))    
 
   
     def classValidation(testloader, device, model, classes):
@@ -66,4 +66,4 @@ class train_and_validate():
 
 
             for i in range(10):
-                print('Accuracy of %5s : %.4f %%' % (classes[i], 100 * class_correct[i] / class_total[i]))
+                print('Accuracy of %5s : %2d %%' % (classes[i], 100 * class_correct[i] / class_total[i]))
